@@ -111,5 +111,5 @@ const PlatformSection = () => {
     </section>
   );
 };
-
+//
 export default PlatformSection;
