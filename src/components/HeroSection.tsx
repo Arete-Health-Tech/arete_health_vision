@@ -13,8 +13,8 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
-            AI-first platform for hospitals and insurers—improving care,
-            reducing cost, and maximizing patient lifetime value.
+            AI-first platform for Provider and Payer—improving care, reducing
+            cost, and maximizing patient lifetime value.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -40,10 +40,10 @@ const HeroSection = () => {
                   <div className="text-6xl font-bold text-coral-500 mb-2">
                     AI
                   </div>
-                  <div className="text-lg font-semibold text-gray-700">
+                  <div className="text-xl font-semibold text-gray-700">
                     Prodigy.AI Platform
                   </div>
-                  <div className="text-sm text-gray-500 mt-2 max-w-48">
+                  <div className="text-lg text-gray-500 mt-2 max-w-48">
                     Intelligent healthcare solutions powered by advanced
                     artificial intelligence
                   </div>
