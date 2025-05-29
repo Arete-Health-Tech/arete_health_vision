@@ -13,7 +13,7 @@ import CTASection from "./CTASection";
 
 const ContactSection = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="contact-section" className="py-20 bg-gray-50">
       <CTASection />
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
