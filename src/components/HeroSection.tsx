@@ -19,7 +19,10 @@ const HeroSection = () => {
     }
   };
   return (
-    <section className="relative py-40  bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <section
+      className="relative  bg-gradient-to-br from-gray-50 to-white overflow-hidden"
+      style={{ padding: "9% 0%" }}
+    >
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-8 animate-fade-in">
           <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
