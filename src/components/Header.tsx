@@ -27,6 +27,12 @@ const Header = () => {
       aboutSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const scrollToCaseStudy = () => {
+    const aboutSection = document.getElementById("caseStudies");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <header className="w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -57,10 +63,10 @@ const Header = () => {
             About
           </a>
           <a
-            onClick={scrollToAbout}
+            onClick={scrollToCaseStudy}
             className="text-gray-700 hover:text-coral-500 transition-colors font-medium cursor-pointer"
           >
-            Prodigy.AI
+            Case Study
           </a>
           <a
             onClick={scrollToWhy}

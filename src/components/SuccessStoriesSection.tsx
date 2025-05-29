@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const SuccessStoriesSection = () => {
   const caseStudies = [
@@ -34,7 +35,7 @@ const SuccessStoriesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="caseStudies" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-sm text-gray-600 uppercase tracking-wider mb-2">
@@ -100,12 +101,14 @@ const SuccessStoriesSection = () => {
         </div>
 
         <div className="text-center">
-          <Button
-            variant="outline"
-            className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 rounded-lg font-medium"
-          >
-            View all
-          </Button>
+          <Link to="/case-studies">
+            <Button
+              variant="outline"
+              className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 rounded-lg font-medium"
+            >
+              View all
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

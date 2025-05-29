@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import { useEffect } from "react";
 
 const HeroSection = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="relative py-40  bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
