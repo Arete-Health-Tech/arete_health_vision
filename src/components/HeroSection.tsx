@@ -6,6 +6,18 @@ const HeroSection = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact-section");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById("about-section");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section className="relative py-40  bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -22,11 +34,15 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="bg-coral-500 hover:bg-coral-600 text-white px-8 py-3 rounded-lg font-medium text-lg transition-colors">
+            <Button
+              onClick={scrollToContact}
+              className="bg-coral-500 hover:bg-coral-600 text-white px-8 py-3 rounded-lg font-medium text-lg transition-colors"
+            >
               Request a Demo
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
+              onClick={scrollToAbout}
               variant="outline"
               className="border-coral-500 text-coral-500 hover:bg-coral-50 px-8 py-3 rounded-lg font-medium text-lg transition-colors"
             >

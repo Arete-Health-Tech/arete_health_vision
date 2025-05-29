@@ -39,13 +39,28 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Email</div>
-                  <div className="text-gray-600">
+                  <div
+                    className="text-gray-600 cursor-pointer hover:underline"
+                    onClick={() =>
+                      window.open("mailto:ayushjain@aretehealth.tech")
+                    }
+                    title="Send Email"
+                  >
                     ayushjain@aretehealth.tech
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
+              <div
+                className="flex items-start space-x-4 cursor-pointer hover:bg-coral-50 rounded-lg transition-colors"
+                onClick={() =>
+                  window.open(
+                    "https://maps.google.com/?q=118-B, 2nd Floor, TSG Building, Behind UCO Bank, Shahpur Jat, New Delhi - 110049",
+                    "_blank"
+                  )
+                }
+                title="Open in Google Maps"
+              >
                 <div className="w-12 h-12 bg-coral-100 rounded-lg flex items-center justify-center">
                   <MapPin className="h-6 w-6 text-coral-500" />
                 </div>
@@ -65,13 +80,21 @@ const ContactSection = () => {
             <div className="mt-8">
               <div className="font-semibold text-gray-900 mb-4">Follow us</div>
               <div className="flex space-x-4">
-                <div className="w-10 h-10 bg-coral-100 rounded-lg flex items-center justify-center cursor-pointer hover:bg-coral-200 transition-colors">
+                {/* <div className="w-10 h-10 bg-coral-100 rounded-lg flex items-center justify-center cursor-pointer hover:bg-coral-200 transition-colors">
                   <span className="text-coral-500 font-bold">f</span>
                 </div>
                 <div className="w-10 h-10 bg-coral-100 rounded-lg flex items-center justify-center cursor-pointer hover:bg-coral-200 transition-colors">
                   <span className="text-coral-500 font-bold">t</span>
-                </div>
-                <div className="w-10 h-10 bg-coral-100 rounded-lg flex items-center justify-center cursor-pointer hover:bg-coral-200 transition-colors">
+                </div> */}
+                <div
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/company/arete-healthtech-pvt-ltd/",
+                      "_blank"
+                    )
+                  }
+                  className="w-10 h-10 bg-coral-100 rounded-lg flex items-center justify-center cursor-pointer hover:bg-coral-200 transition-colors"
+                >
                   <span className="text-coral-500 font-bold">in</span>
                 </div>
               </div>
