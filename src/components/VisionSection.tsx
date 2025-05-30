@@ -1,6 +1,4 @@
 import { Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
 
 const VisionSection = () => {
   return (
@@ -67,30 +65,6 @@ const VisionSection = () => {
               </div>
             </div>
           </div>
-
-          {/* <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
-            <p className="text-gray-700 leading-relaxed">
-              To enable intelligent, integrated, and scalable healthcare
-              transformation.
-            </p>
-
-            <blockquote className="border-l-4 border-coral-500 pl-6 py-4 bg-gray-50 rounded-r-lg">
-              <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
-              <p className="text-gray-700 italic">
-                "Deliver AI-first solutions that improve care, drive efficiency,
-                and reduce cost—across the patient lifecycle."
-              </p>
-            </blockquote>
-
-            <Button
-              variant="outline"
-              className="border-coral-500 text-coral-500 hover:bg-coral-50 font-medium"
-            >
-              Request a Demo
-              <ChevronRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div> */}
         </div>
       </div>
     </section>

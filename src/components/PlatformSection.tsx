@@ -86,11 +86,6 @@ const PlatformSection = () => {
                     </p>
                   ))}
                 </div>
-                {/* <div className="pt-2">
-                  <Button className="bg-coral-500 hover:bg-coral-600 text-white px-8 py-3 rounded-lg font-medium text-lg transition-colors">
-                    GET STARTED
-                  </Button>
-                </div> */}
               </div>
 
               {/* Image/Visual */}
@@ -98,12 +93,6 @@ const PlatformSection = () => {
                 <div className="relative h-64 sm:h-80 lg:h-96 bg-gradient-to-br  rounded-lg overflow-hidden mx-auto max-w-md lg:max-w-none shadow-lg hover:shadow-xl transition-shadow">
                   {/* Abstract geometric shapes */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    {/* <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80">
-                      <div className="absolute inset-0 bg-gray-800 rounded-full transform scale-100"></div>
-                      <div className="absolute inset-2 sm:inset-4 bg-gray-600 rounded-full transform scale-95"></div>
-                      <div className="absolute inset-4 sm:inset-8 bg-gray-400 rounded-full transform scale-90"></div>
-                      <div className="absolute inset-6 sm:inset-12 bg-gray-300 rounded-full transform scale-85"></div>
-                    </div> */}
                     <img src={platform.img} />
                   </div>
 

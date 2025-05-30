@@ -19,16 +19,8 @@ const TestimonialsSection = () => {
       role: "Tertiary care hospital chain",
       logo: "L",
     },
-    // {
-    //   id: 3,
-    //   quote:
-    //     "Reduced patient drop-offs by 23% with personalized WhatsApp journeys. The patient engagement modules have revolutionized our communication strategy.",
-    //   name: "Star Hospital Hyderabad",
-    //   role: "Specialty surgical center",
-    //   logo: "S",
-    // },
     {
-      id: 4,
+      id: 3,
       quote:
         "Streamlined our chronic disease management program with automated patient follow-ups and real-time monitoring, improving patient outcomes by 27%.",
       name: "Apex Health Systems",

@@ -76,25 +76,7 @@ const SuccessStoriesSection = () => {
                   {study.title}
                 </h3>
                 <p className="text-gray-600 mb-4">{study.description}</p>
-                <div className="flex items-center space-x-3">
-                  {/* <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
-                    <span className="text-xs font-medium text-gray-600">
-                      {study.author
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </span>
-                  </div> */}
-                  {/* <div className="text-sm text-gray-500">
-                    <span className="font-medium text-gray-700">
-                      {study.author}
-                    </span>
-                    <span className="mx-1">•</span>
-                    <span>{study.date}</span>
-                    <span className="mx-1">•</span>
-                    <span>{study.readTime}</span>
-                  </div> */}
-                </div>
+                <div className="flex items-center space-x-3"></div>
               </CardContent>
             </Card>
           ))}
