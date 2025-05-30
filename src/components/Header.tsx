@@ -24,19 +24,35 @@ const Header = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
+  // const handleNavigation = (id: string) => {
+  //   if (id === "home") {
+  //     window.scrollTo(0, 0);
+  //     navigate("/");
+  //   } else {
+  //     const section = document.getElementById(id);
+  //     if (section) {
+  //       section.scrollIntoView({ behavior: "smooth" });
+  //     }
+  //   }
+  //   setIsOpen(false);
+  // };
   const handleNavigation = (id: string) => {
     if (id === "home") {
-      window.scrollTo(0, 0);
-      navigate("/");
+      setIsOpen(false);
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        navigate("/");
+      }, 300); // Delay to allow drawer to close
     } else {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
+      setIsOpen(false);
+      setTimeout(() => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 300); // Delay to allow drawer to close
     }
-    setIsOpen(false);
   };
-
   return (
     <header className="w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
