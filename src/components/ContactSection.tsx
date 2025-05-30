@@ -10,8 +10,97 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import CTASection from "./CTASection";
+import emailjs from "@emailjs/browser";
+import { useEffect, useState } from "react";
+import { toast } from "@/components/ui/sonner";
+import { useRef } from "react";
 
 const ContactSection = () => {
+  const form = useRef<HTMLFormElement | null>(null);
+
+  useEffect(() => {
+    emailjs.init("YOUR_PUBLIC_KEY");
+  }, []);
+
+  const [userName, setUserName] = useState<string>("");
+  const [userEmail, setUserEmail] = useState<string>("");
+  const [userOrganization, setUserOrganization] = useState<string>("");
+  const [role, setRole] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    console.log("Form Values:", {
+      user_name: userName,
+      user_email: userEmail,
+      user_organization: userOrganization,
+      user_role: role,
+      message: message,
+    });
+
+    if (!userName || !userEmail || !userOrganization || !message) {
+      toast.error("All Data is required");
+      return;
+    }
+
+    const data = {
+      name: userName,
+      email: userEmail,
+      organization: userOrganization,
+      role: role,
+      message: message,
+    };
+    fetch(
+      "https://script.google.com/a/macros/aretehealth.tech/s/AKfycbyNvf5MLLiJeMeh43sCLgenYDDEEZKbv5sK6361rWLWh5JM442I4VEt0c5ErHlPp-V0/exec",
+      {
+        // Replace with your actual web app URL
+        method: "POST",
+        body: JSON.stringify(data),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.result === "success") {
+          console.log("Data added to sheet successfully");
+
+          // Optionally send email using EmailJS as well
+          if (form.current) {
+            emailjs
+              .sendForm(
+                "service_voahtjf",
+                "template_4cmsmjb",
+                form.current,
+                "lYakrV8ntyld3pBXN"
+              )
+              .then(
+                () => {
+                  console.log("Email sent successfully!");
+                  toast.success("Email Sent Successfully");
+                  // Clear the form
+                  setUserName("");
+                  setUserEmail("");
+                  setUserOrganization("");
+                  setMessage("");
+                  setRole("");
+                },
+
+                (error) => {
+                  console.log("Email failed to send...", error.text);
+                }
+              );
+          }
+        } else {
+          console.error("Error:", data.message);
+          toast.error("Failed to send email. Please try again.");
+        }
+      })
+      .catch((error) => {
+        console.error("Request failed", error);
+        toast.error("Failed to send email. Please try again.");
+      });
+  };
+
   return (
     <section id="contact-section" className="py-20 bg-gray-50">
       <CTASection />
@@ -80,12 +169,6 @@ const ContactSection = () => {
             <div className="mt-8">
               <div className="font-semibold text-gray-900 mb-4">Follow us</div>
               <div className="flex space-x-4">
-                {/* <div className="w-10 h-10 bg-coral-100 rounded-lg flex items-center justify-center cursor-pointer hover:bg-coral-200 transition-colors">
-                  <span className="text-coral-500 font-bold">f</span>
-                </div>
-                <div className="w-10 h-10 bg-coral-100 rounded-lg flex items-center justify-center cursor-pointer hover:bg-coral-200 transition-colors">
-                  <span className="text-coral-500 font-bold">t</span>
-                </div> */}
                 <div
                   onClick={() =>
                     window.open(
@@ -106,33 +189,55 @@ const ContactSection = () => {
               Schedule a Demo
             </h3>
 
-            <form className="space-y-6">
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Name *
                 </label>
-                <Input placeholder="Enter your name" />
+                <Input
+                  placeholder="Enter your name"
+                  name="user_name"
+                  type="text"
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
+                />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Email *
                 </label>
-                <Input placeholder="Enter your email" type="email" />
+                <Input
+                  placeholder="Enter your email"
+                  type="email"
+                  name="user_email"
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
+                />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Hospital/Organization Name *
                 </label>
-                <Input placeholder="Enter organization name" />
+                <Input
+                  placeholder="Enter organization name"
+                  type="text"
+                  name="user_organization"
+                  value={userOrganization}
+                  onChange={(e) => setUserOrganization(e.target.value)}
+                />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Role *
                 </label>
-                <Select>
+                <Select
+                  name="user_role"
+                  value={role}
+                  onValueChange={(value) => setRole(value)}
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Select your role" />
                   </SelectTrigger>
@@ -153,6 +258,9 @@ const ContactSection = () => {
                 <Textarea
                   placeholder="Tell us about your requirements..."
                   rows={4}
+                  name="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
 
