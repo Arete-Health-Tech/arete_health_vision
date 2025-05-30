@@ -24,25 +24,13 @@ const Header = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
-  // const handleNavigation = (id: string) => {
-  //   if (id === "home") {
-  //     window.scrollTo(0, 0);
-  //     navigate("/");
-  //   } else {
-  //     const section = document.getElementById(id);
-  //     if (section) {
-  //       section.scrollIntoView({ behavior: "smooth" });
-  //     }
-  //   }
-  //   setIsOpen(false);
-  // };
   const handleNavigation = (id: string) => {
     if (id === "home") {
       setIsOpen(false);
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
         navigate("/");
-      }, 300); // Delay to allow drawer to close
+      }, 300);
     } else {
       setIsOpen(false);
       setTimeout(() => {
@@ -50,7 +38,7 @@ const Header = () => {
         if (section) {
           section.scrollIntoView({ behavior: "smooth" });
         }
-      }, 300); // Delay to allow drawer to close
+      }, 300);
     }
   };
   return (

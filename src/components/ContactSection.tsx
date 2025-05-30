@@ -130,12 +130,10 @@ const ContactSection = () => {
                   <div className="font-semibold text-gray-900">Email</div>
                   <div
                     className="text-gray-600 cursor-pointer hover:underline"
-                    onClick={() =>
-                      window.open("mailto:ayushjain@aretehealth.tech")
-                    }
+                    onClick={() => window.open("mailto:help@aretehealth.tech")}
                     title="Send Email"
                   >
-                    ayushjain@aretehealth.tech
+                    help@aretehealth.tech
                   </div>
                 </div>
               </div>
