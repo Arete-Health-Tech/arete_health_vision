@@ -7,7 +7,7 @@ const TestimonialsSection = () => {
       id: 1,
       quote:
         "Improved OPD to IPD conversion by 14% through OCTA and Agentic AI. The automation has transformed our patient acquisition process.",
-      name: "Paras Hospitals",
+      name: "ABC Hospitals",
       role: "Multi-specialty healthcare network",
       logo: "P",
     },
@@ -15,7 +15,7 @@ const TestimonialsSection = () => {
       id: 2,
       quote:
         "Empowered strategic decision-making with real-time BI dashboards. We can now identify operational inefficiencies and address them immediately.",
-      name: "LIVASA Hospitals",
+      name: "ABC Hospitals",
       role: "Tertiary care hospital chain",
       logo: "L",
     },
@@ -23,7 +23,7 @@ const TestimonialsSection = () => {
       id: 3,
       quote:
         "Streamlined our chronic disease management program with automated patient follow-ups and real-time monitoring, improving patient outcomes by 27%.",
-      name: "Apex Health Systems",
+      name: "XYZ Health Systems",
       role: "Integrated healthcare provider",
       logo: "A",
     },

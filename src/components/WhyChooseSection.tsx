@@ -87,11 +87,9 @@ const WhyChooseSection = () => {
                   <span className="text-white font-bold">MD</span>
                 </div>
                 <div>
-                  <div className="font-semibold text-white">
-                    Dr. Manish Dhawan
-                  </div>
+                  <div className="font-semibold text-white">Dr. John Doe</div>
                   <div className="text-coral-200 text-sm">
-                    CEO, Paras Hospitals
+                    CEO, ABC Hospitals
                   </div>
                 </div>
               </div>
